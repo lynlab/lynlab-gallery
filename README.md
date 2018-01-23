@@ -18,4 +18,10 @@ npm run build
 npm run build --report
 ```
 
+## Deploy & Run
+```
+docker build -t lynlab/gallery .
+docker run -p 8080:8080 lynlab/gallery
+```
+
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
