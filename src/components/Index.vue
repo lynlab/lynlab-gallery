@@ -23,6 +23,11 @@ export default {
   data() {
     return { groups: [] };
   },
+  beforeCreate() {
+    if (!this.$session.get('state-auth')) {
+      this.$router.push('/login');
+    }
+  },
   created() {
     this.loads();
   },
