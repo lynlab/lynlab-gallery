@@ -1,0 +1,16 @@
+version: '3'
+services:
+  builder:
+    build: .
+    volumes:
+      - ./dist:/usr/src/app/dist
+    
+  server:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./dist:/usr/share/nginx/html
+    ports:
+      - "${GALLERY_PORT}:80"
+    depends_on:
+      - builder

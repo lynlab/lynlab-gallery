@@ -8,6 +8,4 @@ RUN yarn
 
 COPY . .
 
-RUN yarn build
-
-CMD ["npm", "start"]
+CMD [ "npm", "run", "build" ]
